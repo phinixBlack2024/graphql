@@ -6,6 +6,7 @@
 [Contribution guidelines for this project](doc/images/2.png)
 [Contribution guidelines for this project](doc/images/3.png)
 [Contribution guidelines for this project](doc/images/4.png)
+2. If sceenshort are not clear thne you can go to this [url](https://app.eraser.io/workspace/g8qRKRVaoXoOxIYgnyk3?origin=share) 
 
 ## Package user
  1. express
