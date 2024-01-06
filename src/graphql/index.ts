@@ -27,6 +27,7 @@ const gqlServer = new ApolloServer({
     
     // start gql server 
     await gqlServer.start();
+    console.log(`graph ql http://localhost:4000/graphql`)
     return gqlServer
 }
 export default createApolloGraph;

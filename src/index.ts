@@ -13,7 +13,7 @@ res.json({data:"helo world" });
 
 app.use('/graphql',expressMiddleware(await createApolloGraph()));
 app.listen(4000,()=>{
-    console.log("port listen 4000");
+    console.log("port listen http://localhost:4000/");
 })
 }
 init();

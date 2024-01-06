@@ -1,18 +1,21 @@
 import { prismaClient } from "../../lib/db";
+import { GraphQLError } from 'graphql';
+import UserService, { createUserPayload } from "./service";
 
 
 const queries ={
 }
 const mutations ={
-    createUser: async(_:any,{name, email, password}:{name: string, email:string, password:string} )=>{
-    const data =await prismaClient.user.create({ 
-        data:{
-            name,
-            email,
-            password
+    createUser: async(_:any,payload:createUserPayload )=>{
+        const { name } = payload;
+
+        if (!name) {
+          throw new GraphQLError("error hai bahi", {
+            extensions: { code: 'USER_NOT_FOUND', msg: "erro hai na " },
+          });// Throw an error instead of returning a JSON response
         }
-    });
-    return data.id
+    const data =await UserService.createUser(payload)
+    return 2
     }
 }
 export const resolvers ={queries, mutations};
